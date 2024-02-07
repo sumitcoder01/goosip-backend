@@ -6,6 +6,7 @@ const { createServer } = require("http");
 const app = express();
 const server = createServer(app);
 const port = process.env.PORT || 3000;
+
 const io = new Server(server, {
     cors: {
         origin: "*",
@@ -32,5 +33,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Gossip backend is running on port ${port}`);
 });
